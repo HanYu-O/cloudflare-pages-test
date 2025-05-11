@@ -1,2 +1,3 @@
-# cloudflare-test
-test pages and workers in cloudflare
+# cloudflare-pages-test
+
+test pages in cloudflare
