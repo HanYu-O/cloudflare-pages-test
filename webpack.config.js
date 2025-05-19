@@ -40,7 +40,12 @@ module.exports = {
     hot: true,
     proxy: {
       "/graphql": {
-        target: "",
+        target: "", // worker url
+        changeOrigin: true,
+        secure: false,
+      },
+      "/api/agents": {
+        target: "", // worker url
         changeOrigin: true,
         secure: false,
       },
