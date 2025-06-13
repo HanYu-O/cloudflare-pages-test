@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const Dotenv = require("dotenv");
+Dotenv.config();
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -36,16 +38,16 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
-    port: 3000,
+    port: 3001,
     hot: true,
     proxy: {
       "/graphql": {
-        target: "", // worker url
+        target: process.env.GRAPHQL_URL, // worker url
         changeOrigin: true,
         secure: false,
       },
       "/api/agents": {
-        target: "", // worker url
+        target: process.env.AGENTS_URL, // worker url
         changeOrigin: true,
         secure: false,
       },
